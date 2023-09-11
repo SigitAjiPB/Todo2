@@ -5,43 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Todo 2</title>
 </head>
-<body class="w-screen h-screen flex justify-center items-center">
+<body class="flex justify-center items-center font-body py-9 h-screen">
 
-    <section id="container" class="w-[60%] h-[90%] bg-slate-600 relative">
-        <section id="navbar">
-            <div id="navWrapper">
-                <ul class="w-full flex justify-between p-6 mb-4 bg-slate-700 items-center">
-                    <li>
-                        Todo 2.0
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#fffafa" viewBox="0 0 256 256"><path d="M224,120v16a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V120a8,8,0,0,1,8-8H216A8,8,0,0,1,224,120Zm-8,56H40a8,8,0,0,0-8,8v16a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V184A8,8,0,0,0,216,176Zm0-128H40a8,8,0,0,0-8,8V72a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V56A8,8,0,0,0,216,48Z"></path></svg>
-                    </li>
-                </ul>
-            </div>
+    <section id="container" class="max-h-max h-[550px] w-[80%] bg-slate-600 rounded-xl drop-shadow-lg flex flex-col overflow-hidden">
+        <section id="navWrapper">
+            <ul class="w-full h-16 flex justify-between px-6 py-2 bg-slate-700 items-center">
+                <li class="text-white text-2xl">
+                    <p class="drop-shadow-lg font-medium">TODO 2.0</p>
+                </li>
+                <button class=" bg-slate-600 w-10 h-10 flex justify-center items-center drop-shadow-lg rounded-lg">
+                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#fffafa" viewBox="0 0 256 256"><path d="M224,120v16a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V120a8,8,0,0,1,8-8H216A8,8,0,0,1,224,120Zm-8,56H40a8,8,0,0,0-8,8v16a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V184A8,8,0,0,0,216,176Zm0-128H40a8,8,0,0,0-8,8V72a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V56A8,8,0,0,0,216,48Z"></path></svg>
+                </button>
+            </ul>
         </section>
 
-        <main id="mainContainer" class="w-full h-full px-4 py-2">
-            <section id="listWrapper">
-                <div class="flex items-center justify-center gap-2">
-                    <div class="px-3 py-2 bg-white rounded-lg flex items-center gap-2 drop-shadow-lg">
-                        <p class="max-w-none border border-green-500">Giratina is my Fav Pokemon Giratina is my Fav Pokemon Giratina is my Fav Pokemon </p>
-                        <div class="border border-red-400 bg-transparent">
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="30" heig2t="32" fill="#000000" viewBox="0 0 256 256"><path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"></path></svg>
-                        </div>
+        <section id="mainContainer" class="h-full px-4 py-2 overflow-y-scroll">
+            <!-- <section id="listWrapper">
+                <div id="listTodo" class="mb-3 flex items-center justify-center gap-2">
+                    <div class="px-3 py-2 w-full bg-white rounded-lg flex items-center justify-between gap-2 drop-shadow-lg">
+                        <p class="max-w-none w-full">Giratina is my Fav Pokemon Giratina is my Fav Pokemon Giratina is my Fav Pokemon </p>
+                        <button class="p-1 bg-transparent rounded-lg hover:bg-slate-100">
+                            <svg class="h-6 w-6 fill-yellow-300 " xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f2e8e8" viewBox="0 0 256 256"><path d="M184.13,147.7a8.08,8.08,0,0,0-2.54,7.89l13.52,58.54a8,8,0,0,1-11.89,8.69l-51.1-31a7.93,7.93,0,0,0-8.24,0l-51.1,31a8,8,0,0,1-11.89-8.69l13.52-58.54a8.08,8.08,0,0,0-2.54-7.89L26.76,108.35A8,8,0,0,1,31.3,94.28l59.46-5.14a8,8,0,0,0,6.67-4.88L120.66,28.9a8,8,0,0,1,14.68,0l23.23,55.36a8,8,0,0,0,6.67,4.88l59.46,5.14a8,8,0,0,1,4.54,14.07Z" opacity="0.2"></path><path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"></path></svg>
+                        </button>
                     </div>
-                    <button class="h-8 bg-red-500 rounded-lg drop-shadow-lg px-2"><svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f2e8e8" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
+                    <button id="deleteBtn" class="h-8 bg-red-500 rounded-lg drop-shadow-lg px-2 hover:bg-red-600"><svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f2e8e8" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
                 </div>
-            </section>
+            </section> -->
 
-        </main>
-
-        <section id="inputWrapper" class="absolute bottom-0 w-full px-12 py-6 bg-slate-700 flex justify-between gap-6">
-            <input type="text" placeholder="+ add list" class="w-full px-3 rounded-lg drop-shadow-lg outline-none">
-            <button class="h-10 w-10 drop-shadow-lg rounded-lg text-white bg-slate-800">+</button>
         </section>
+
+        <form id="inputWrapper" class="w-full px-8 py-6 bg-slate-600 flex justify-between gap-4">
+            <input id="inputTodo" type="text" placeholder="+ add list" class="w-full px-3 rounded-lg drop-shadow-lg outline-none">
+            <button id="addTodo" class="h-10 w-10 drop-shadow-lg rounded-lg text-white bg-slate-700 flex justify-center items-center hover:bg-slate-800"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f2e8e8" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg></button>
+        </form>
     </section>
 
 
